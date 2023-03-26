@@ -51,43 +51,56 @@
     content: "\e96d";
     color: white;
   }
+  .p-menu .p-menuitem-link .p-menuitem-icon{
+    color: white;
+  }
 
   .p-menu .p-menuitem-link .p-menuitem-text {
     color: white;
   }
 
   .p-menu-list {
-    position: fixed;
+    // position: fixed;
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #15d3c9;
+    width: 100% !important;
   }
-
+  .p-submenu-header{
+    background-color: #15d3c9 !important;
+    color: white !important;
+  }
+  .p-menu{
+    width: 100% !important;
+    background-color: #15d3c9 !important;
+    border: unset;
+    top: 0 !important;
+  }
   .menu-side-bar {
     position: fixed;
     height: 100vh;
     width: 14.6vw;
     min-width: 100px;
     border: 0;
+    top: 0 !important;
     background-color: #15d3c9;
 
   }
 
-  .p-menu .p-submenu-header {
-    margin: 0;
-    padding: 0.75rem 1rem;
-    color: White;
-    background: #15d3c9;
-    font-weight: 600;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
+//   .p-menu .p-submenu-header {
+//     margin: 0;
+//     padding: 0.75rem 1rem;
+//     color: White;
+//     background: #15d3c9;
+//     font-weight: 600;
+//     border-top-right-radius: 0;
+//     border-top-left-radius: 0;
+//   }
 
-  .p-menu {
-    background-color: #15d3c9;
-    border: 0;
-  }
+//   .p-menu {
+//     background-color: #15d3c9;
+//     border: 0;
+//   }
 }
 
 .container {

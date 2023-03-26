@@ -4,6 +4,7 @@ import {
 import {
   Component
 } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   MenuItem
 } from 'primeng/api';
@@ -23,7 +24,7 @@ export class HeaderComponent {
   visibleSidebar1: any;
 
 
-  constructor() {}
+  constructor(private router:Router) {}
   items: MenuItem[];
 
 
@@ -37,7 +38,7 @@ export class HeaderComponent {
             label: 'Dashboard',
             icon: 'pi pi-fw pi-chart-bar',
             command:()=>{
-              alert('clicou')
+              this.router.navigate(['dashboard']);
             }
           },
           {
