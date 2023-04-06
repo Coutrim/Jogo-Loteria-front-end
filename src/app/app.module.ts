@@ -19,7 +19,9 @@ import {SidebarModule} from 'primeng/sidebar';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from "primeng/table";
-import { DashboardComponent } from './app/dashboard/dashboard.component';
+import { CommonModule } from '@angular/common';
+
+
 
 
 
@@ -44,7 +46,8 @@ import { DashboardComponent } from './app/dashboard/dashboard.component';
     SidebarModule,
     TieredMenuModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    CommonModule
 
   ],
   providers: [],

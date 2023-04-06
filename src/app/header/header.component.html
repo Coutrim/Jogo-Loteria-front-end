@@ -1,15 +1,60 @@
-<p-menu class="menu-side-bar" [model]="items"></p-menu>
-<div>
+  <p-card>
+    <p-header class="p-header">
+      <nav class="nav-bar">
+        <!-- Div do input text -->
+        <div class="p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText placeholder="Search for...">
+        </div>
 
-</div>
-<!-- <div style="display:flex; justify-content: flex-end;">
-  <div class="p-col-12 p-md-6 p-lg-3 p-shadow-12" style="display: flex; justify-content:flex-start; align-items: center; height: 11vh; width: 86vw; padding-left: 2%;">
-    <span class="p-input-icon-right p-col-12 p-md-6 p-lg-3 ">
-      <div class="input">
-        <input type="text" pInputText placeholder="Search for..." class="divInputCor p-col-12 p-sm-3 p-md-3 p-lg-10">
-        <i class="pi pi-search " style="color: white; border-bottom-right-radius: 3px;"></i>
-      </div>
-    </span>
+        <!-- Div dos icones do header -->
+        <div class="nav-list">
+          <i class="pi pi-bell" style="color: grey;"></i>
+          <i class="pi pi-envelope" style="color: grey;"></i>
+        </div>
+
+        <div class="perfil">
+          <span>Henrique</span>
+          <img class="imagem-perfil"
+            src="https://conteudo.imguol.com.br/blogs/174/files/2018/05/iStock-648229868-1024x909.jpg" alt="">
+        </div>
+      </nav>
+    </p-header>
+  </p-card>
+  <div>
+    <label for="" class="label-apostas">Apostas</label>
   </div>
-</div>
- -->
+  <p-menu class="menu-side-bar" [model]="items">
+  </p-menu>
+  <div class="tableDiv">
+    <p-table [value]="data" class="p-table" [columns]="apostas" [value]="cars" [paginator]="true" [rows]="4">
+      <ng-template pTemplate="caption" style="color: #15d3c9;">
+        <div class="div-apostas-realizadas">
+          <span style="color: #15d3c9;">Apostas Realizadas</span></div>
+        <div>
+          <input type="text" pInputText size="50" placeholder="Global Filter"
+            (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+        </div>
+
+      </ng-template>
+      <ng-template pTemplate="header" class="p-table">
+        <tr>
+          <th>Número da aposta</th>
+          <th>Data</th>
+          <th>Erros</th>
+          <th>Acertos</th>
+          <th>Ganhos</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-dado>
+        <tr>
+          <td>{{dado.id}}</td>
+          <td>{{ dado.data | date:'dd/MM/yyyy \'às\' H\'h\'mm'}} </td>
+          <td>{{ dado.erros }}</td>
+          <td>{{ dado.acertos }}</td>
+          <td>{{"R$ " + dado.ganhos.toFixed(2)}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
